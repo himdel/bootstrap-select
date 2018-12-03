@@ -1,6 +1,14 @@
 bootstrap-select
 ================
 
+The original upstream - https://github.com/snapappointments/bootstrap-select/ has become unresponsive.
+
+Forking the repo to fix things in the 1.12.* branch - releasing as @pf3/select .
+
+Build: `npm install && grunt`
+
+---
+
 [![Latest release](https://img.shields.io/github/release/silviomoreto/bootstrap-select.svg)](https://github.com/silviomoreto/bootstrap-select/releases/latest)
 [![Bower](https://img.shields.io/bower/v/bootstrap-select.svg)]()
 [![npm](https://img.shields.io/npm/v/bootstrap-select.svg)](https://www.npmjs.com/package/bootstrap-select)
