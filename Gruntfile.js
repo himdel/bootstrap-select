@@ -49,7 +49,7 @@ module.exports = function (grunt) {
       },
       main: {
         src: '<%= jshint.main.src %>',
-        dest: 'dist/js/<%= pkg.name %>.js'
+        dest: 'dist/js/bootstrap-select.js'
       },
       i18n: {
         expand: true,
@@ -92,10 +92,10 @@ module.exports = function (grunt) {
       },
       main: {
         src: '<%= concat.main.dest %>',
-        dest: 'dist/js/<%= pkg.name %>.min.js',
+        dest: 'dist/js/bootstrap-select.min.js',
         options: {
           sourceMap: true,
-          sourceMapName: 'dist/js/<%= pkg.name %>.js.map'
+          sourceMapName: 'dist/js/bootstrap-select.js.map'
         }
       },
       i18n: {
@@ -110,12 +110,12 @@ module.exports = function (grunt) {
         strictMath: true,
         sourceMap: true,
         outputSourceFiles: true,
-        sourceMapURL: '<%= pkg.name %>.css.map',
+        sourceMapURL: 'bootstrap-select.css.map',
         sourceMapFilename: '<%= less.css.dest %>.map'
       },
       css: {
         src: 'less/bootstrap-select.less',
-        dest: 'dist/css/<%= pkg.name %>.css'
+        dest: 'dist/css/bootstrap-select.css'
       }
     },
 
@@ -157,7 +157,7 @@ module.exports = function (grunt) {
       },
       css: {
         src: '<%= less.css.dest %>',
-        dest: 'dist/css/<%= pkg.name %>.min.css'
+        dest: 'dist/css/bootstrap-select.min.css'
       }
     },
 
@@ -193,24 +193,7 @@ module.exports = function (grunt) {
           prefix: 'Selectpicker.VERSION = \''
         },
         src: [
-          'js/<%= pkg.name %>.js'
-        ],
-      },
-      cdn: {
-        options: {
-          prefix: 'ajax/libs/<%= pkg.name %>/'
-        },
-        src: [
-          'README.md',
-          'docs/docs/index.md'
-        ],
-      },
-      nuget: {
-        options: {
-          prefix: '<version>'
-        },
-        src: [
-          'nuget/bootstrap-select.nuspec'
+          'js/bootstrap-select.js'
         ],
       },
       default: {
@@ -218,7 +201,6 @@ module.exports = function (grunt) {
           prefix: '[\'"]?version[\'"]?:[ "\']*'
         },
         src: [
-          'composer.json',
           'docs/mkdocs.yml',
           'package.json'
         ],
@@ -243,26 +225,6 @@ module.exports = function (grunt) {
           map: true
         },
         src: '<%= less.css.dest %>'
-      }
-    },
-
-    compress: {
-      zip: {
-        options: {
-          archive: 'bootstrap-select-<%= pkg.version %>.zip',
-          mode: 'zip'
-        },
-        files: [
-          {
-            expand: true,
-            cwd: 'dist/',
-            src: '**',
-            dest: 'bootstrap-select-<%= pkg.version %>/'
-          }, {
-            src: ['bower.json', 'composer.json', 'package.json'],
-            dest: 'bootstrap-select-<%= pkg.version %>/'
-          }
-        ]
       }
     },
 
@@ -303,7 +265,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dev-watch', ['build-css', 'build-js', 'watch']);
 
   // Full distribution
-  grunt.registerTask('dist', ['build-css', 'build-js', 'compress']);
+  grunt.registerTask('dist', ['build-css', 'build-js']);
 
   // Default task.
   grunt.registerTask('default', ['build-css', 'build-js']);
