@@ -11,7 +11,3 @@ bower_components
 bootstrap-select-*.zip
 
 docs/site
-
-# Dist
-dist/
-package-lock.json
