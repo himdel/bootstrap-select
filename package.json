@@ -2,7 +2,7 @@
   "name": "@pf3/select",
   "main": "dist/js/bootstrap-select.js",
   "description": "Bootstrap-select is a jQuery plugin that utilizes Bootstrap's dropdown.js to style and bring additional functionality to standard select elements.",
-  "version": "1.12.5",
+  "version": "1.12.6",
   "homepage": "http://silviomoreto.github.io/bootstrap-select",
   "author": {
     "name": "Silvio Moreto",
